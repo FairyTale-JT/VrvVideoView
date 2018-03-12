@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.github.rubensousa.previewseekbar.exoplayer.PreviewTimeBarLayout
+        android:id="@+id/previewTimeBarLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <FrameLayout
+            android:id="@+id/previewFrameLayout"
+            android:layout_width="@dimen/video_preview_width"
+            android:layout_height="@dimen/video_preview_height"
+            android:background="@drawable/video_frame"
+            android:padding="@dimen/video_frame_width">
+
+            <com.google.android.exoplayer2.ui.SimpleExoPlayerView
+                android:id="@+id/previewPlayerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:controller_layout_id="@layout/exo_simple_player_view"
+                app:surface_type="texture_view"
+                app:use_artwork="false"
+                app:use_controller="false" />
+
+        </FrameLayout>
+
+        <com.github.rubensousa.previewseekbar.exoplayer.PreviewTimeBar
+            android:id="@+id/exo_progress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/previewFrameLayout"
+            android:layout_marginTop="10dp"
+            android:max="800" />
+
+    </com.github.rubensousa.previewseekbar.exoplayer.PreviewTimeBarLayout>
+</LinearLayout>

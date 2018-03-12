@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.jt.vrplayer.MainActivity">
+
+    <!--将VrVideoView设置为全屏大小-->
+    <com.google.vr.sdk.widgets.video.VrVideoView
+        android:id="@+id/video_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <!--进度条容器-->
+    <LinearLayout
+        android:id="@+id/video_progress_container"
+        android:layout_width="@dimen/y1020"
+        android:layout_height="@dimen/y100"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/y100"
+        android:background="@drawable/video_progress_shape"
+        android:visibility="gone">
+
+        <!--播放暂停按钮-->
+        <ImageView
+            android:id="@+id/play"
+            android:layout_width="@dimen/x90"
+            android:layout_height="@dimen/y90"
+            android:layout_gravity="center_vertical"
+            android:src="@mipmap/stop"/>
+        <!--进度条-->
+        <SeekBar
+            android:id="@+id/video_progress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="@dimen/x600"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"/>
+        <!--时间进度 / 总时长-->
+        <TextView
+            android:id="@+id/video_duration"
+            android:layout_width="@dimen/x240"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:textColor="@color/colorFFFFFF"/>
+        <!--VR模式按钮-->
+        <ImageView
+            android:id="@+id/video_vr"
+            android:layout_width="@dimen/x90"
+            android:layout_height="@dimen/x90"
+            android:layout_gravity="center_vertical"
+            android:src="@mipmap/icon_vr"/>
+    </LinearLayout>
+
+    <!--重播-->
+    <TextView
+        android:id="@+id/replay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:drawableTop="@mipmap/replay"
+        android:text="@string/replay"
+        android:textColor="@color/colorFFFFFF"
+        android:textSize="20sp"
+        android:visibility="gone"/>
+
+    <!--视频加载缓冲进度圈-->
+    <ProgressBar
+        android:id="@+id/video_buffer"
+        style="@style/video_buffer_style"/>
+
+</RelativeLayout>
