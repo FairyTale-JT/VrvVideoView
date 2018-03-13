@@ -13,7 +13,6 @@ public class RegularExpress {
 
     private RegularExpress() {
     }
-
     /**
      * 将int类型的毫秒时间值转化为形如这样格式的字符串: 02:30:23,2小时,30分钟,23秒
      *

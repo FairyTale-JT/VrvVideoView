@@ -19,7 +19,7 @@
         android:layout_height="@dimen/y100"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="@dimen/y100"
+        android:layout_marginBottom="@dimen/y60"
         android:background="@drawable/video_progress_shape"
         android:visibility="gone">
 
